@@ -1,0 +1,19 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+
+# modeling
+xgboost       # if this fails with 3.13, we can remove it and stick to sklearn
+shap          # same: nice to have, but optional if install fails
+
+# API & deployment
+fastapi
+uvicorn[standard]
+pydantic
+
+# testing & linting
+pytest
+flake8
