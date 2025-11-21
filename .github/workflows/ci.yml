@@ -30,6 +30,8 @@ jobs:
           flake8 src tests
 
       - name: Run tests with pytest
+        env:
+          PYTHONPATH: .
         run: |
           pip install pytest
           pytest -q

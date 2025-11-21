@@ -1,10 +1,20 @@
+import sys
+from pathlib import Path
+
 import pandas as pd
 
-from src.data_processing import engineer_rfm_features
+# Ensure project root is on sys.path when running pytest locally
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.data_processing import engineer_rfm_features  # noqa: E402
 
 
 def test_engineer_rfm_features_columns():
-    # minimal dummy data
+    """
+    The engineered RFM dataframe should contain the expected columns.
+    """
     data = {
         "CustomerId": ["C1", "C1", "C2"],
         "TransactionId": ["T1", "T2", "T3"],
@@ -23,6 +33,9 @@ def test_engineer_rfm_features_columns():
 
 
 def test_engineer_rfm_features_aggregation():
+    """
+    The RFM aggregation should correctly sum Monetary and count Frequency.
+    """
     data = {
         "CustomerId": ["C1", "C1", "C2"],
         "TransactionId": ["T1", "T2", "T3"],
