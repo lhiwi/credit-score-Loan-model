@@ -75,7 +75,7 @@ Key findings:
 
 ---
 
-## 🛠 Feature Engineering
+##  Feature Engineering
 
 Feature engineering is based on **RFM analysis**, a well-established behavioral modeling approach.
 
